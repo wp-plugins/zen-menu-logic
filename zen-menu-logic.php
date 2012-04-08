@@ -58,7 +58,7 @@ if (!class_exists ('ZenOfWPMenuLogic')) {
 		function init_settings () {
 			register_setting ('menu_logic_options', 'menu_logic_options', array (&$this, 'validate_menu_logic_options'));
 			add_settings_section ('zen_menu_logic_settings', 'Zen Menu Logic Settings', array (&$this, 'draw_expl'), __FILE__);
-			add_settings_field ('zen_menu_logic_settings_name', 'Select Primary Location', array (&$this, 'draw_option'), __FILE__, 'zen_menu_logic_settings');
+			add_settings_field ('zen_menu_logic_settings_name', 'Select which location you want Zen Menu Logic to work on', array (&$this, 'draw_option'), __FILE__, 'zen_menu_logic_settings');
 		}
 		
 		function draw_options_page () {
@@ -76,8 +76,7 @@ if (!class_exists ('ZenOfWPMenuLogic')) {
 		
 		function draw_expl () {
 			echo 'Your theme may have registered multiple menu locations, under different names.<br/>';
-			echo 'There is a radio button for each named location.  Select which location you want<br/>';
-			echo 'the Zen Menu Logic to work on.';
+			echo 'There is a radio button for each named location.';
 		}
 		
 		function draw_option () {

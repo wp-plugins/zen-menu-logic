@@ -44,6 +44,9 @@ alternatively
 
 == Changelog ==
 
+= 1.21 =
+* Changed the text in the options panel.
+
 = 1.2 =
 * There is a design flaw in v1.1 where I assumed that the name of the primary menu location
 * was primary.  That is the way it is in the 2011 theme.  But not all themes are like that.
