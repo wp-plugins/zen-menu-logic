@@ -3,7 +3,7 @@ Contributors: zenofwordpress
 Donate link: http://www.zenofwp.com/zen-plugins/zen-menu-logic/
 Tags: custom menus, menu logic
 Requires at least: 3.3.1
-Tested up to: 3.3.1
+Tested up to: 3.4.1
 Stable tag: trunk
 License: GPLv2 or later
 
