@@ -16,8 +16,10 @@ This plugin only works under the following conditions:
 1. the theme has registered at least one menu location
 2. user has created at least one custom menu with one or more
    menu items.
+3. user has selected which menu location the plugin should work on
+   in the Settings -> Zen Menu Logic options page
 
-If those 2 conditions are met, then the edit page for every page and post
+If those 3 conditions are met, then the edit page for every page and post
 and custom post type will contain a meta box listing the custom menus with
 radio buttons. All you need do is select which custom menu should display
 when that page is called.
