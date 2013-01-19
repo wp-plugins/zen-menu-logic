@@ -1,6 +1,7 @@
 === Zen Menu Logic ===
 Contributors: zenofwordpress
-Donate link: http://www.zenofwp.com/zen-plugins/zen-menu-logic/
+Donate link: http://www.zenofwp.com/
+Plugin Uri: http://www.zml.zenofwp.com/
 Tags: custom menus, menu logic
 Requires at least: 3.3.1
 Tested up to: 3.5

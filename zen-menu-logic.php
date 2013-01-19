@@ -1,7 +1,7 @@
 <?php
 /*
  * Plugin Name: Zen Menu Logic
- * Plugin Uri: http://www.zenofwp.com/zen-plugins/zen-menu-logic/
+ * Plugin Uri: http://www.zml.zenofwp.com/
  * Version: v1.2
  * Author: <a href="http://www.zenofwp.com">Greg Turner</a>
  * Description: Allows user to denote on any page which of many custom menus is to be used as the primary menu.
