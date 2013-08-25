@@ -4,7 +4,7 @@ Donate link: http://www.zenofwp.com/
 Plugin Uri: http://www.zml.zenofwp.com/
 Tags: custom menus, menu logic
 Requires at least: 3.3.1
-Tested up to: 3.5
+Tested up to: 3.6
 Stable tag: trunk
 License: GPLv2 or later
 
@@ -46,6 +46,12 @@ alternatively
 == Screenshots ==
 
 == Changelog ==
+
+= 1.4 =
+* Fixed bug in saving logic. Tested in WP 3.6
+
+= 1.3 =
+* Added uninstall functionality to delete option used by plugin
 
 = 1.21 =
 * Changed the text in the options panel.

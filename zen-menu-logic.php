@@ -2,7 +2,7 @@
 /*
  * Plugin Name: Zen Menu Logic
  * Plugin Uri: http://www.zml.zenofwp.com/
- * Version: v1.2
+ * Version: v1.4
  * Author: <a href="http://www.zenofwp.com">Greg Turner</a>
  * Description: Allows user to denote on any page which of many custom menus is to be used as the primary menu.
  * License: GPLv2 or later
@@ -34,6 +34,10 @@ if (!class_exists ('ZenOfWPMenuLogic')) {
 	class ZenOfWPMenuLogic {
 		
 		function ZenOfWPMenuLogic () {
+			add_action ('init', array ($this, 'initMe'));
+		}
+		
+		function initMe () {
 			if ($this->is_menulogic_supported())
 				if (is_admin ()) {
 					add_action ('admin_menu', array (&$this, 'register_settings_menu'));
@@ -48,7 +52,7 @@ if (!class_exists ('ZenOfWPMenuLogic')) {
 				else {
 					if ($this->is_primary_set ())
 						add_filter ('wp_nav_menu_args', array (&$this, 'menulogic'));
-				}
+				}		
 		}
 		
 		function register_settings_menu () {
@@ -118,8 +122,10 @@ if (!class_exists ('ZenOfWPMenuLogic')) {
 		function is_menulogic_supported () {	
 			// do we have a least one menu location?
 			$locations = get_theme_mod('nav_menu_locations');
-			if (empty ($locations)) 		
+			if (empty ($locations)) {	
+echo 'no locations';			
 				return false;
+			}
 			
 			// now make sure there is at least one menu, that
 			// has at least one menu item
@@ -137,18 +143,27 @@ if (!class_exists ('ZenOfWPMenuLogic')) {
 		// this function is called when user clicks update of a page or post
 		// this saves the menu choice for this page
 		function save_menulogic ($post_id) {
-			if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) 
+			if (defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) 
 				return;
+				
+			if (array_key_exists ('post_type', $_POST) == FALSE)
+				return;
+				
+			if (array_key_exists ('zenofwp_menulogic_noncename', $_POST) == FALSE)
+				return;
+				
+			if ('page' == $_POST['post_type']) {
+				if (!current_user_can( 'edit_page', $post_id))
+					return;
+				}
+				else {
+					if (!current_user_can( 'edit_post', $post_id))
+						return;
+				}
+				
 			if ( !wp_verify_nonce( $_POST['zenofwp_menulogic_noncename'], plugin_basename( __FILE__ ) ) )
-				return;
-			if ( 'page' == $_POST['post_type'] ) {
-				if ( !current_user_can( 'edit_page', $post_id ) )
-					return;
-			}
-			else {
-				if ( !current_user_can( 'edit_post', $post_id ) )
-					return;
-			}		
+				return;	
+				
 			if (!isset ($_POST['zenofwp_menulogic_menuselect'])) 
 				return;
 			$menuId = intval ($_POST['zenofwp_menulogic_menuselect']);
