@@ -47,8 +47,6 @@ alternatively
 
 == Changelog ==
 
-= 1.4.1 =
-* Tested successfully in WP 3.7.1
 
 = 1.4 =
 * Fixed bug in saving logic. Tested in WP 3.6
