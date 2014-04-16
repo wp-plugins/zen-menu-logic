@@ -4,7 +4,7 @@ Donate link: http://www.zenofwp.com/
 Plugin Uri: http://www.zml.zenofwp.com/
 Tags: custom menus, menu logic
 Requires at least: 3.3.1
-Tested up to: 3.8
+Tested up to: 3.9
 Stable tag: trunk
 License: GPLv2 or later
 
